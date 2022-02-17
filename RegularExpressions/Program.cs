@@ -12,7 +12,8 @@ namespace RegularExpressions
         {
             Console.WriteLine("Welcome to User Registration Program");
             Console.WriteLine("1.First Name Validation" +
-                              "\n2.Exit");
+                              "\n2.Last Name Validation" +
+                              "\n3.Exit");
             bool flag = true;
             while (flag)
             {
@@ -28,7 +29,17 @@ namespace RegularExpressions
                         break;
 
                     case 2:
+                        Console.WriteLine("User Registration Validating using Regular Expression!");
+                        LastNameRegex regexSample1 = new LastNameRegex();
+                        regexSample1.Validating();
+                        break;
+
+                    case 3:
                         flag = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid Option");
                         break;
                 }
             }
