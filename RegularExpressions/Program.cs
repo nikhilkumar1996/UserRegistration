@@ -14,7 +14,8 @@ namespace RegularExpressions
             Console.WriteLine("1.First Name Validation" +
                               "\n2.Last Name Validation" +
                               "\n3.Email Id" +
-                              "\n4.Exit");
+                              "\n4.Phone Number" +
+                              "\n5.Exit");
             bool flag = true;
             while (flag)
             {
@@ -41,6 +42,13 @@ namespace RegularExpressions
                         break;
 
                     case 4:
+                        Console.WriteLine("User Registration Validating using Regular Expression!");
+                        PhoneNoRegex phno = new PhoneNoRegex();
+                        phno.Validating();
+                        break;
+
+
+                    case 5:
                         flag = false;
                         break;
 
