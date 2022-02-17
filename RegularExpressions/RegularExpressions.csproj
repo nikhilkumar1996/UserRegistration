@@ -46,6 +46,7 @@
     <Compile Include="EmailID.cs" />
     <Compile Include="FirstNameRegEx.cs" />
     <Compile Include="LastNameRegex.cs" />
+    <Compile Include="PasswordCheckRegex.cs" />
     <Compile Include="PhoneNoRegex.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

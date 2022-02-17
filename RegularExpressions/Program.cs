@@ -15,7 +15,8 @@ namespace RegularExpressions
                               "\n2.Last Name Validation" +
                               "\n3.Email Id" +
                               "\n4.Phone Number" +
-                              "\n5.Exit");
+                              "\n5.PasswordCheck" +
+                              "\n6.Exit");
             bool flag = true;
             while (flag)
             {
@@ -47,8 +48,15 @@ namespace RegularExpressions
                         phno.Validating();
                         break;
 
-
                     case 5:
+                        Console.WriteLine("User Registration Validating using Regular Expression!");
+                        PasswordCheckRegex passwordCheckRegex = new PasswordCheckRegex();
+                        passwordCheckRegex.Validating();
+                        break;
+
+
+
+                    case 6:
                         flag = false;
                         break;
 
