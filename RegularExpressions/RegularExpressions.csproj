@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailID.cs" />
     <Compile Include="FirstNameRegEx.cs" />
     <Compile Include="LastNameRegex.cs" />
     <Compile Include="Program.cs" />

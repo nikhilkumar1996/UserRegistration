@@ -13,7 +13,8 @@ namespace RegularExpressions
             Console.WriteLine("Welcome to User Registration Program");
             Console.WriteLine("1.First Name Validation" +
                               "\n2.Last Name Validation" +
-                              "\n3.Exit");
+                              "\n3.Email Id" +
+                              "\n4.Exit");
             bool flag = true;
             while (flag)
             {
@@ -33,8 +34,13 @@ namespace RegularExpressions
                         LastNameRegex regexSample1 = new LastNameRegex();
                         regexSample1.Validating();
                         break;
-
                     case 3:
+                        Console.WriteLine("User Registration Validating using Regular Expression!");
+                        EmailID emailID = new EmailID();
+                        emailID.Validating();
+                        break;
+
+                    case 4:
                         flag = false;
                         break;
 
