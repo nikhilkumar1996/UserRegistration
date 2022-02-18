@@ -9,7 +9,7 @@ namespace RegularExpressions
 {
     public class PasswordCheckRegex
     {
-        static string password= @"^(?=.*\d)[A-Za-z\d]{8,}$";
+        static string password= @"^(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$";
         Regex regex = new Regex(password);
 
         public void Validating()
@@ -24,7 +24,7 @@ namespace RegularExpressions
             bool val=regex.IsMatch(pswdCheck);
             if (val)
             {
-                Console.WriteLine("Password has Atleast one Numeric Value");
+                Console.WriteLine("Password has Atleast one Special Character");
             }
             else
             {
