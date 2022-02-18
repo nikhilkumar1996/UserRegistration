@@ -9,7 +9,7 @@ namespace RegularExpressions
 {
     public class EmailID
     {
-        static string emailId = ("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        static string emailId = (@"(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?!.*[<>`])(?=[^.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\]*[.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\][^.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\]*$).{8,}$");
         Regex regex = new Regex(emailId);
 
         public void Validating()
@@ -20,16 +20,15 @@ namespace RegularExpressions
 
         public void ValidatingEamilId()
         {
-            Console.WriteLine("Enter Email Id");
-            string email=Console.ReadLine();
+            string[] email = { "Vishal4@gmail.com", "sakti_32@gmail,com", "rohan45@gmail.com", "prath@gmail.com" };
             bool val=regex.IsMatch(email);
             if (val)
             {
-                Console.WriteLine("Email Id is Valid");
+                Console.WriteLine("Email Ids are Valid");
             }
             else
             {
-                Console.WriteLine("Email Id is Invalid");
+                Console.WriteLine("Email Ids are Invalid");
             }
         }
     }
