@@ -190,7 +190,7 @@ namespace RegularExpressions
 
         public static string ValidatingPassWord(string password)
         {
-            string[] passwordInput = { "Shalini@12", "sakAthi_32", "raksha123", "prathee" };
+            string[] passwordInput = { "Nikhil@12", "sakshi_32", "sikher123", "rohan" };
             string passwordPattern = @"(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?!.*[<>`])(?=[^.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\]*[.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\][^.,:;'!@#$%^&*_+=|(){}[?\-\]\/\\]*$).{8,}$";
 
             Regex regex = new Regex(passwordPattern);

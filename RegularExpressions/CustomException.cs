@@ -9,7 +9,7 @@ namespace RegularExpressions
     public class CustomException: Exception
     {
         ExceptionType type;
-        public string message;
+        public string message ;
 
         public enum ExceptionType
         {
