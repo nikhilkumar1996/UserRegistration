@@ -43,13 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailID.cs" />
-    <Compile Include="FirstNameRegEx.cs" />
-    <Compile Include="LastNameRegex.cs" />
-    <Compile Include="PasswordCheckRegex.cs" />
-    <Compile Include="PhoneNoRegex.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="CustomException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegexSample.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
