@@ -17,16 +17,9 @@ namespace TestProject1
 
             public void ValidateFirstname(string a, string expected)
             {
-                try
-                {
-
                     var actual = RegexSample.ValidatingFirstName(a);
                     Assert.AreEqual(expected, actual);
-                }
-                catch (CustomException actual)
-                {
-                    Assert.AreEqual(expected, actual.message);
-                }
+                
             }
             //Validating for Last Name
             [TestMethod]
@@ -36,15 +29,8 @@ namespace TestProject1
             [DataRow("Kumar05", null)]
             public void ValidateUserLastname(string a, string expected)
             {
-                try
-                {
-                    var actual = RegexSample.ValidatingLastName(a);
-                    Assert.AreEqual(expected, actual);
-                }
-                catch (CustomException actual)
-                {
-                    Assert.AreEqual(expected, actual.message);
-                }
+                var actual = RegexSample.ValidatingLastName(a);
+                Assert.AreEqual(expected, actual);
             }
             //Validation for Email
             [TestMethod]
@@ -73,15 +59,9 @@ namespace TestProject1
 
             public void ValidateUserEmail(string a, string expected)
             {
-                try
-                {
                     var actual = RegexSample.ValidatingEmailId(a);
                     Assert.AreEqual(expected, actual);
-                }
-                catch (CustomException actual)
-                {
-                    Assert.AreEqual(expected, actual.message);
-                }
+                
             }
 
             //Validation for Phone Number
@@ -95,15 +75,9 @@ namespace TestProject1
             [DataRow("91 984290505000000", null)]
             public void ValidateUserPhoneNumber(string a, string expected)
             {
-                try
-                {
+                
                     var actual = RegexSample.ValidatingPhoneNum(a);
                     Assert.AreEqual(expected, actual);
-                }
-                catch (CustomException actual)
-                {
-                    Assert.AreEqual(expected, actual.message);
-                }
             }
 
             ////Validation for Password
@@ -125,15 +99,76 @@ namespace TestProject1
 
             public void ValidateUserPassword(string a, string expected)
             {
-                try
-                {
-                    var actual = RegexSample.ValidatingPassWord(a);
-                    Assert.AreEqual(expected, actual);
-                }
-                catch (CustomException actual)
-                {
-                    Assert.AreEqual(expected, actual.message);
-                }
+                
+                var actual = RegexSample.ValidatingPassWord(a);
+                Assert.AreEqual(expected, actual);    
+            }
+            [TestMethod]
+            public void Test_Method_Object_Creation_RegexSample()
+            {
+                object expected = new RegexSample();
+                UserRegistrationFactory factory = new UserRegistrationFactory();
+                object actual = factory.CreateObjectForRegexSample("UserRegistration.RegexSample", "RegexSample");
+                expected.Equals(actual);
+
+            }
+            //Test for parameterconstructor invoked using object created
+            [TestMethod]
+            public void Test_Method_Parameteized_Constructor()
+            {
+                object expected = new RegexSample("RegularExpression");
+                UserRegistrationFactory factory = new UserRegistrationFactory();
+                object actual = factory.CreateParameterizedConstructor("UserRegistration.RegexSample", "RegexSample", "RegularExpression");
+                actual.Equals(expected);
+            }
+
+            [TestMethod]
+            public void Reflection_Return_Default_Constructor_No_Constructor_Found()
+            {
+                UserRegistrationFactory factory = new UserRegistrationFactory();
+                object expected = new RegexSample();
+                object obj = factory.CreateObjectForRegexSample("UserRegistration.RegexSample", "RegexSam");
+                var expectedType = expected.GetType();
+                var objType = obj.GetType();
+                Assert.AreEqual(expectedType, objType);
+                
+                 
+            }
+            [TestMethod]
+            public void Reflection_Return_Default_Constructor_No_Class_Found()
+            {
+                UserRegistrationFactory factory = new UserRegistrationFactory();
+                object expected = new RegexSample();
+                object obj = factory.CreateObjectForRegexSample("UserRegistration.RegexSample", "RegexSample");
+                var expectedType = expected.GetType();
+                var objType = obj.GetType();
+                Assert.AreEqual(expectedType, objType);
+
+
+            }
+            [TestMethod]
+            public void Reflection_Return_Parameterized_Class_Invalid()
+            {
+                string message = "Regular Expression";
+                UserRegistrationFactory factory = new UserRegistrationFactory();
+                object expected = new RegexSample();
+                object obj = factory.CreateParameterizedConstructor("UserRegistration.RegexSae", "RegexSample", message);
+                var expectedType = expected.GetType();
+                var objType = obj.GetType();
+                Assert.AreEqual(expectedType, objType);
+            }
+
+            [TestMethod]
+            public void Reflection_Return_Parameterized_Constructor_Invalid()
+            {
+                string message = "Regular Expression";
+                UserRegistrationFactory factory = new UserRegistrationFactory();
+                object expected = new RegexSample();
+                object obj = factory.CreateParameterizedConstructor("UserRegistration.RegexSample", "RegexSam", message);
+                var expectedType = expected.GetType();
+                var objType = obj.GetType();
+                Assert.AreEqual(expectedType, objType);
+               
             }
 
 

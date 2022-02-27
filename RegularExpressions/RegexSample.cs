@@ -9,7 +9,22 @@ namespace RegularExpressions
 {
     public class RegexSample
     {
-        string pattern = "^[A-Za-z]{2,}$";
+        public string message;
+        public static string firstName;
+        public static string lastName;
+        public static string email;
+        public static string phoneNum;
+        public static string paasword;
+        string pattern = "^[A-Z][a-z]{2,}$";
+
+        public RegexSample()
+        {
+            Console.WriteLine("Default Constructor");
+        }
+        public RegexSample(string message)
+        {
+            this.message = message;
+        }
 
 
         public void Validating()
@@ -223,6 +238,7 @@ namespace RegularExpressions
             }
 
         }
+
     }
 }
 
